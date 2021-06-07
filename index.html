@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg {
+            display: flex;
+            width: 1200px;
+            height: 60px;
+            margin: auto;
+            text-align: center;
+            line-height: 60px;
+            color: white;
+            flex-wrap: wrap;
+        }
+        
+        .first {
+            background: red;
+        }
+        
+        .second {
+            background: blue;
+        }
+        
+        .third {
+            background: black;
+        }
+        
+        .fouth {
+            background: orange;
+        }
+        
+        @media screen and (min-width: 1200px) {
+            .bg>div {
+                flex-grow: 1;
+            }
+        }
+        
+        @media screen and (min-width:992px) and (max-width:1200px) {
+            .bg {
+                width: 700px;
+            }
+            .first {
+                flex: 100%;
+            }
+            .bg>div:nth-child(n+2) {
+                flex-grow: 1;
+            }
+        }
+        
+        @media screen and (min-width:768px) and (max-width:992px) {
+            .bg {
+                width: 500px;
+            }
+            .bg>div {
+                flex: 50%;
+            }
+        }
+        
+        @media screen and (max-width:768px) {
+            .bg {
+                width: 100%;
+            }
+            .bg>div {
+                flex: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg">
+        <div class='first'>1</div>
+        <div class='second'>2</div>
+        <div class='third'>3</div>
+        <div class='fouth'>4</div>
+    </div>
+
+</body>
+
+</html>
